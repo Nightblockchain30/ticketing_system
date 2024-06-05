@@ -6,10 +6,11 @@ const port = process.env.PORT || 3000;
 
 // root path
 server_app.get('/', (req, res) => {
-    res.send("Hello World");
+    res.send("Holaaa");
 });
 
 server_app.listen(port, () => {
+    console.log(`Envioronment: ${process.env.NODE_ENV}`)
     console.log(`Server is running at http://localhost:${port}`);
 })
 
