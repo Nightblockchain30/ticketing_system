@@ -13,4 +13,5 @@ server_app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 })
 
-// console.log(process.env);
+// console.log(process.env); // Comando para visualizar las variables de entorno de la aplicación
+
