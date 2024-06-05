@@ -1,0 +1,13 @@
+{
+  "name": "ticketing_system",
+  "version": "1.0.0",
+  "description": "ticket system for any company",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node server.js"
+  },
+  "author": "NightBlockChain",
+  "license": "MIT"
+}
