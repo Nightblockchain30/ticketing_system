@@ -12,17 +12,22 @@ const URL_DB =
         ? "mongodb://localhost:27017/ticketing-db-test" // Si estamos en test cogemos esta URL
         : process.env.URL_DB || "mongodb://localhost:27017/ticketing-db"; // Sino escogeriamos la variable de entorno si existe y sino la última URL
 
+// Diferencia entra BBDD SQL y NO SQL
+// -SQL-       -No SQL-
+// Tabla     | Coleccion
+// Registros | Documentos 
 mongoose
     .connect(URL_DB) // Esta conexión llamará a la URL en cuestión de MongoDB
     .then(() => console.log(`Connected to DB : ${URL_DB}`))
     .catch((err) => console.log(`Failed Connection`, err));
 
-//MIDDLEWAREs -> Funciones que nos ayudan a interactuar con el REQ-UEST OBJECT y el RES-PONSE OBJECT 
-express_app.use(morgan('dev')); // Mejora nuestro LOG y nuestra info en cada petición
-express_app.use(express.json()); // El middleware json() nos ayuda a convertir el objeto del cliente a formato JSON para poder trabajar con ella desde el BACKEND 
+//MIDDLEWAREs - Siempre llamarlos nates de las peticiones para poder contar con sus funcionalidades
+// Son como Funciones/capas que nos ayudan a interactuar con el REQ-UEST OBJECT y el RES-PONSE OBJECT 
+express_app.use(morgan('dev')); // Middleware 1.-Mejora nuestro LOG y nuestra info en cada petición
+express_app.use(express.json()); // Middleware 2- json() nos ayuda a convertir el objeto del cliente a formato JSON para poder trabajar con ella desde el BACKEND 
 
 
-// PATHs
+// PATHs o Peticiones
 express_app.get('/', (req, res) => {
     res.status(200).send("Holaaa");
 });

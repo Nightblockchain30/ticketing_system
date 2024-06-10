@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=prod node server.js",
-    "dev": "NODE_ENV=dev node --watch server.js",
+    "dev": "NODE_ENV=dev  node --watch server.js",
     "test": "SET NODE_TEST=test jest"
   },
   "author": "NightBlockChain",
